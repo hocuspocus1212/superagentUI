@@ -34,6 +34,7 @@ export class Api {
     return this.fetchFromApi("/api-users/identify", {
       method: "POST",
       body: JSON.stringify(payload),
+      mode: 'no-cors',
     })
   }
 
