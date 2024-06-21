@@ -42,6 +42,8 @@ export default function OnboardingClientPage() {
   })
 
   async function onSubmit(values: z.infer<typeof onboardFormSchema>) {
+    console.log("app>onboarding>client-page>onBoardingClientPage-> line -> 45","/api/onboard")
+
     const res = await fetch("/api/onboard", {
       method: "POST",
       headers: {

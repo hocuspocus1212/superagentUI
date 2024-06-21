@@ -25,6 +25,9 @@ function UpgradeButton({
   const { toast } = useToast()
 
   const redirectToStripeCheckout = async () => {
+    console.log("app>setting>billing>updagrade-plan-button>UpgradeButton->redirectToStripeCheckout-> line -> 28")
+    console.log("/api/stripe/sessions")
+
     const res = await fetch("/api/stripe/sessions", {
       method: "POST",
       body: JSON.stringify({
@@ -49,6 +52,9 @@ function UpgradeButton({
   }
 
   const cancelSubscription = async () => {
+    console.log("app>setting>billing>updagrade-plan-button>upgradeButton->cancelSubscription-> line -> 55")
+    console.log(`/api/stripe/subscriptions/${currentSubscriptionId}/cancel`)
+
     const res = await fetch(
       `/api/stripe/subscriptions/${currentSubscriptionId}/cancel`,
       {
