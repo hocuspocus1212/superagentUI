@@ -113,6 +113,9 @@ export default function Chat({
     ])
 
     try {
+      console.log("app>workflow>id>chat.tsx>Chat>OnSubmit-> line -> 116")
+      console.log(`${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/workflows/${workflow.id}/invoke`)
+  
       await fetchEventSource(
         `${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/workflows/${workflow.id}/invoke`,
         {

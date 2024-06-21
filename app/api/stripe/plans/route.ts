@@ -5,6 +5,8 @@ import { siteConfig } from "@/config/site"
 import { stripe } from "@/lib/stripe"
 
 export async function GET(req: NextRequest) {
+  console.log("app->api>stripe>plan>route>-> line -> 8")
+  console.log(`function GET`)
   const planNames = Object.keys(siteConfig.paymentPlans)
   const planPromises = planNames.map((planName) =>
     stripe.plans.retrieve(

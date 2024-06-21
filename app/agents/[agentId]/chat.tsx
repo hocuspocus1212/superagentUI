@@ -114,6 +114,10 @@ export default function Chat({
     ])
 
     if (!useStreaming) {
+      console.log(
+        "app>agents>agentid>chat.tsx>chat>onsubmit>line->117",
+        `${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/agents/${agent.id}/invoke`
+      )
       setFunctionCalls(defaultFunctionCalls)
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/agents/${agent.id}/invoke`,
@@ -169,7 +173,12 @@ export default function Chat({
         clearInterval(timerRef.current)
       }
     } else {
+      console.log(
+        "app>agents>agentid>chat.tsx>chat>onsubmit>line->173",
+        `${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/agents/${agent.id}/invoke`
+      )
       try {
+        
         await fetchEventSource(
           `${process.env.NEXT_PUBLIC_SUPERAGENT_API_URL}/agents/${agent.id}/invoke`,
           {

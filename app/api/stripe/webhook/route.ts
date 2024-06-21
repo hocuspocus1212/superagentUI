@@ -14,6 +14,7 @@ interface EventData {
 }
 
 const sendEvent = async (data: EventData): Promise<void> => {
+  console.log("app>api>stripe>webhook>route.tx>sendEvent> line -> 18","https://app.loops.so/api/v1/events/send")
   await fetch("https://app.loops.so/api/v1/events/send", {
     method: "POST",
     headers: {

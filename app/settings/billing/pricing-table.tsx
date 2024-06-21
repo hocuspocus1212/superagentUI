@@ -25,6 +25,8 @@ interface Plan {
 const getPlansDetails = async (): Promise<
   Record<keyof typeof siteConfig.paymentPlans, Stripe.Plan>
 > => {
+  console.log("app->setting>billing>pricing-table>getPlansDetails-> line -> 28")
+  console.log(`/api/stripe/plans`)
   const res = await fetch(`/api/stripe/plans`)
   return await res.json()
 }
@@ -33,7 +35,8 @@ const getSubscription = async (
   subscriptionId?: string
 ): Promise<Stripe.Subscription | undefined> => {
   if (!subscriptionId) return
-
+  console.log("app->setting>billing>pricing-table>getSubscription-> line -> 38")
+  console.log(`/api/stripe/subscriptions/${subscriptionId}`)
   const res = await fetch(`/api/stripe/subscriptions/${subscriptionId}`)
   return await res.json()
 }

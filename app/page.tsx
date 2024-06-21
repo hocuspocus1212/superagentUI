@@ -81,6 +81,8 @@ export default function IndexPage() {
       (event, _session) => {
         if (event === "SIGNED_IN") {
           const fetchProfileAndIdentify = async () => {
+            console.log("app->page->IndexPage-> line -> 84")
+            console.log(`onAuthStateChange`)
             const { data: profile } = await supabase
               .from("profiles")
               .select("*")
